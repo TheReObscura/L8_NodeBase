@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "start": "node -r dotenv/config index.js dotenv_config_path=.env.development",
+    "build": "node -r dotenv/config index.js dotenv_config_path=.env.production",
+    "deploy": "node -r dotenv/config index.js dotenv_config_path=.env.domain"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,10 @@
   },
   "homepage": "https://github.com/TheReObscura/L8_NodeBase#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
